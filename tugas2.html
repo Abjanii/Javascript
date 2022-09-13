@@ -1,0 +1,128 @@
+<!--
+Diketahui ada 100 orang pegawai dengan nama Pegawai1 s/d Pegawai 100:
+Gunakan If multikondisi untuk menentukan jabatan:
+- Pegawai1 s/d Pegawai25 jabatan manager, gapok 15jt
+- Pegawai26 s/d Pegawai50 jabatan asisten manager, gapok 10jt
+- Pegawai51 s/d Pegawai75 jabatan supervisor, gapok 7jt
+- Pegawai76 s/d Pegawai100 jabatan staff, gapok 4jt
+Untuk Gapok gunakan switch case
+
+Dari Gapok Tentukan:
+- Tunjangan Jabatan = 20 % dari gapok
+- Tunjangan Kesehatan = 10 % dari gapok
+- Gaji Kotor = Gapok + Tunjab + Tunkes
+
+Gunakan ternary untuk menentukan agama Muslim dan Non Muslim
+baris ganjil Muslim , warna barisnya yellow
+baris genap Non Muslim , warna barisnya biru
+jika pegawai muslim dan gaji kotornya minimal 7jt, ada zakat profesi sebesar 2,5% dari gaji kotornya
+
+Take Home Pay = Gaji Kotor - Zakat Profesi
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas2 javascript</title>
+  </head>
+  <body bgcolor="#181818">
+    <h1 align="center" style="color: #5CB8E4; padding-top: 1rem">
+      Data Pegawai Swasta DKI Jakarta
+    </h1>
+
+    <table bgcolor="#181818" align="center" cellpadding="5">
+      <thead>
+        <tr bgcolor="#EEF1FF" align="center">
+          <th>NO</th>
+          <th>NAMA</th>
+          <th>JABATAN</th>
+          <th>AGAMA</th>
+          <th>GAJI POKOK</th>
+          <th>TUNJANGAN JABATAN</th>
+          <th>TUNJANGAN KESEHATAN</th>
+          <th>GAJI KOTOR</th>
+          <th>ZAKAT PROFESI</th>
+          <th>TAKE HOME PAY</th>
+        </tr>
+      </thead>
+      <tbody>
+        <script>
+          // definisi warna & number
+          let numbers, warna;
+          let jabatan = "Manager";
+          for (numbers = 1; numbers <= 100; numbers++) {
+            if (numbers > 75 && numbers <= 100) {
+              jabatan = "Staff";
+            } else if (numbers > 50 && numbers <= 75) {
+              jabatan = "Supervisor";
+            } else if (numbers > 25 && numbers <= 50) {
+              jabatan = "Asisten Manager";
+            } else {
+              jabatan = "Manager";
+            }
+
+            // untuk menentukan agama muslim dan non muslim
+            let agama = "Muslim";
+            warna = numbers % 2 == 0 ? "#34B3F1" : "#F2DF3A";
+            numbers % 2 == 1 ? (agama = "Muslim") : (agama = "Non Muslim");
+
+            // gaji pokok
+            let gapok = 0;
+            switch (jabatan) {
+              case "Manager":
+                gapok = 15000000;
+                break;
+              case "Asisten Manager":
+                gapok = 10000000;
+                break;
+              case "Supervisor":
+                gapok = 7000000;
+                break;
+              case "Staff":
+                gapok = 4000000;
+                break;
+              default:
+                break;
+            }
+
+            // Dari Gapok Tentukan:
+            // Perhitungan Tunjangan Jabatan, Tunjangan Kesehatan, Gaji Kotor / Brutto
+            // - Tunjangan Jabatan = 20 % dari gapok
+            // - Tunjangan Kesehatan = 10 % dari gapok
+            // - Gaji Kotor = Gapok + Tunjab + Tunkes
+
+            let tunjab = 0.2 * gapok;
+            let tunkes = 0.1 * gapok;
+            let brutto = gapok + tunjab + tunkes;
+
+            // Perhitungan zakat profesi jika muslim sebesar 2,5%
+            let zakatProfesi = 0;
+            let totalZakat = 0.025;
+
+            agama == "Muslim" && gapok >= 7000000
+              ? (zakatProfesi = brutto * totalZakat)
+              : 0;
+
+            // perhitungan take home pay
+            let takeHomePay = brutto - zakatProfesi;
+
+            document.write(`<tr bgcolor="${warna}">
+              <td>${numbers}</td>
+              <td>Pegawai ${numbers}</td>
+              <td>${jabatan}</td>
+              <td>${agama}</td>
+              <td>Rp. ${gapok}</td>
+              <td>Rp. ${tunjab}</td>
+              <td>Rp. ${tunkes}</td>
+              <td>Rp. ${brutto}</td>
+              <td>Rp. ${zakatProfesi}</td>
+              <td>Rp. ${takeHomePay}</td>
+            </tr>`);
+          }
+        </script>
+      </tbody>
+    </table>
+  </body>
+</html>
