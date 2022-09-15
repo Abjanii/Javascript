@@ -1,0 +1,92 @@
+<script language="javascript">
+    //array of object
+    let m1 = {nama:"Budi", nilai:75};
+    let m2 = {nama:"Bedu", nilai:55};
+    let m3 = {nama:"Dedi", nilai:95};
+    let m4 = {nama:"Dudi", nilai:88};
+    let m5 = {nama:"Deden", nilai:25};
+    let m6 = {nama:"Desi", nilai:65};
+
+    let mahasiswa = [m1, m2, m3, m4, m5, m6];
+    /*
+    for(m of mahasiswa) {
+        let ket = ( m.nilai >= 60) ? "Lulus" : "Gagal";
+        document.write(`<br/>Nama : ${m.nama} - Nilai : ${m.nilai} - Keterangan : ${ket}`);
+    }
+    */
+    </script>
+    <h3 align="center">Daftar Nilai Mahasiswa</h3>
+            <table align="center" border="0" cellpadding="10">
+                <thead>
+                    <tr bgcolor="#D2DAFF">
+                        <th>NO</th>
+                        <th>NAMA</th>
+                        <th>NILAI</th>
+                        <th>KETERANGAN</th>
+                        <th>GRADE</th>
+                        <th>PREDIKAT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <script language="javascript">
+                    let no = 1;
+                    for(m of mahasiswa) {
+                        //set kelulusan
+                        let ket = ( m.nilai >= 60) ? "Lulus" : "Gagal";
+                        //set grade A - E (if multi kondisi)
+                        // A = 85 - 100, B = 75 - < 85 dst
+
+                        let grade = 0;
+                        if (m.nilai > 85 && m.nilai < 100) {
+                          grade = "A";
+                        } else if (m.nilai >= 75 && m.nilai < 84) {
+                          grade = "B";
+                        } else if (m.nilai >= 60 && m.nilai < 74) {
+                          grade = "C";
+                        } else if (m.nilai >= 50 && m.nilai < 59) {
+                          grade = "D";
+                        } else if (m.nilai < 50) {
+                          grade = "E";
+                        }
+
+                        let predikat = "";
+                        switch (grade) {
+                          case "A":
+                            predikat = "Memuaskan";
+                            break;
+                          case "B":
+                            predikat = "Bagus";
+                            break;
+                          case "C":
+                            predikat = "Cukup";
+                            break;
+                          case "D":
+                            predikat = "Kurung";
+                            break;
+                          case "E":
+                            predikat = "Buruk";
+                            break;
+                          default:
+                            break;
+                        }
+
+                        let warna;
+                        // set warna warni baris ganjil genap
+                        warna = no % 2 == 1 ? "#FFF6BF" : "#FFEBAD";
+
+                        //set predikat ( swtich case)
+                        //A = Memuaskan, B=Bagus, C=Cukup, D=kurang, E=Buruk
+
+                        //set warna-warni baris ganjil & genap
+                        document.write(`<tr bgcolor="${warna}">
+                            <td>${no++}</td>
+                            <td>${m.nama}</td>
+                            <td>${m.nilai}</td>
+                            <td>${ket}</td>
+                            <td>${grade}</td>
+                            <td>${predikat}</td>
+                        </tr>`);
+                    }
+                    </script>
+                </tbody>
+            </table>
