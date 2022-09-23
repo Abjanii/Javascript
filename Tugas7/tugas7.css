@@ -1,0 +1,165 @@
+*{
+    background-color: #100F0F;
+    color: whitesmoke;
+    text-align: left;
+    justify-content: left;
+    font-size:15px;
+    gap: 1rem;
+}
+/* Pengaturan Box */
+.box-1{
+    margin: 5px;
+    padding: 5px;
+    border: 3px solid #A5C9CA;
+    width: 100px;
+    height: 100px;
+}
+.box-2{
+    margin: 5px;
+    padding: 5px;
+    border: 3px solid #A5C9CA;
+    width: 100px;
+    height: 100px;
+}
+.box-3{
+    margin: 5px;
+    padding: 5px;
+    border: 3px solid #A5C9CA;
+    width: 100px;
+    height: 100px;
+}
+.box-4{
+    margin: 5px;
+    padding: 5px;
+    border: 3px solid #A5C9CA;
+    width: 100px;
+    height: 100px;
+}
+h3{
+    font-size: 20px;
+    color: #ABD9FF;
+}
+/* Pengaturan Class Content */
+/* Hewan Unggas */
+.ayam{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid #E7F6F2;
+    background-color: #E7F6F2;
+    width: 100px;
+    height: 100px;
+}
+.angsa{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid #395B64;
+    background-color: #395B64;
+    width: 100px;
+    height: 100px;
+}
+.bebek{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid #E7F6F2;
+    background-color: #E7F6F2;
+    width: 100px;
+    height: 100px;
+}
+.burung{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid #395B64;
+    background-color: #395B64;
+    width: 100px;
+    height: 100px;
+}
+/* Hewan Ternak */
+.domba{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid #E7F6F2;
+    background-color: #E7F6F2;
+    width: 100px;
+    height: 100px;
+}
+.kambing{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid #395B64;
+    background-color: #395B64;
+    width: 100px;
+    height: 100px;
+}
+.kerbau{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid #E7F6F2;
+    background-color: #E7F6F2;
+    width: 100px;
+    height: 100px;
+}
+.sapi{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid #395B64;
+    background-color: #395B64;
+    width: 100px;
+    height: 100px;
+}
+/* Hewan Buas */
+.elang{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid #E7F6F2;
+    background-color: #E7F6F2;
+    width: 100px;
+    height: 100px;
+}
+.harimau{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid #7FBCD2;
+    background-color: #7FBCD2;
+    width: 100px;
+    height: 100px;
+}
+.singa{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid #E7F6F2;
+    background-color: #E7F6F2;
+    width: 100px;
+    height: 100px;
+}
+.ular{
+    margin-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border: 1px solid #7FBCD2;
+    background-color: #7FBCD2;
+    width: 100px;
+    height: 100px;
+}
